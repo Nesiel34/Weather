@@ -1,0 +1,13 @@
+:host{
+  ::ng-deep
+  {
+    .mat-slider-thumb-label{
+      width:32px;
+      height:32px;
+    }
+    .mat-slider-horizontal{
+      width:100%;
+    }
+  }
+
+}

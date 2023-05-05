@@ -15,7 +15,7 @@ namespace WebApi.Controllers
     public class WeatherForecastController : ControllerBase
     {
         private readonly ILogger<WeatherForecastController> _logger;
-        private string baseUrl = "http://api.weatherapi.com/v1/forecast.json?key=65308fb5f482485c82182247230505&q=London&aqi=yes";
+        private string baseUrl = "http://api.weatherapi.com/v1/forecast.json?key=65308fb5f482485c82182247230505&q=London&aqi=yes&days=3";
 
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)

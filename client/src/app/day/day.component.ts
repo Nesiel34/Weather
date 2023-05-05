@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Forecastday } from '../model/IForecast.interface';
+import { WeatherService } from '../service/weather.service';
 
 @Component({
   selector: 'app-day',
@@ -8,11 +9,19 @@ import { Forecastday } from '../model/IForecast.interface';
 })
 export class DayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private weatherService:WeatherService){}
 
   @Input() forecastday!:Forecastday
 
+  selected:boolean = false;
   ngOnInit(): void {
+    this.weatherService.selectedDay$.subscribe(s=>{
+      this.selected  = this.forecastday.date ==s;
+    })
+  }
+
+  selectDay(date:string){
+    this.weatherService.setSelectedDay(date);
   }
 
 }

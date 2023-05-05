@@ -1,0 +1,16 @@
+<div class="d-flex align-items-center">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home">schedule</mat-icon>
+  <mat-slider class="mt-3"
+  [(ngModel)]="value"
+  (input)="changeSlider($event)"
+  [max]="23"
+  [min]="0"
+  [step]="1"
+  [displayWith]="formatLabel"
+  [thumbLabel]="true"
+  [tickInterval]="1"
+  >
+  <input matSliderThumb >
+  </mat-slider>
+
+</div>

@@ -1,3 +1,8 @@
-<button mat-button>
-{{forecastday|json}}
+<button mat-button [ngClass]="{selectedDay:selected}" (click)="selectDay(forecastday.date)">
+  <div  class="d-flex flex-column">
+    <span>
+      {{forecastday.date |date :'EEEE'}}
+    </span>
+  <img [src]="forecastday.day.condition.icon" [alt]="forecastday.day.condition.text"/>
+  </div>
 </button>

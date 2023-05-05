@@ -1,3 +1,11 @@
 
-<app-day *ngFor="let item of forecast.forecastday" [forecastday]="item"></app-day>
+<ng-container *ngIf="forecast">
+  <div class="container d-flex flex-column max-content mt-5">
+    <app-weather></app-weather>
+    <app-hour-slider></app-hour-slider>
+    <div>
+      <app-day *ngFor="let item of forecast.forecastday" [forecastday]="item"></app-day>
+    </div>
+  </div>
+</ng-container>
 

@@ -1,1 +1,14 @@
-<p>weather works!</p>
+<div class="d-flex flex-row-reverse justify-content-between align-items-center" *ngIf="weather">
+  <img [src]="weather.conditon.icon" [alt]="weather.conditon.text">
+  <div class="d-flex">
+    <strong class="temp">
+      {{weather.temp}}
+    </strong>
+    <sup>&#8451;</sup>
+  </div>
+
+  <div>
+      רוח:{{weather.wind}} קמ"ש
+  </div>
+
+</div>

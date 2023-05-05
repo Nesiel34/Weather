@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../service/weather.service';
+import { SelectWeather } from '../model/ISelectForecast.interface';
 
 @Component({
   selector: 'app-weather',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor() { }
+  constructor(private weatherService:WeatherService){}
+
+  weather!:SelectWeather|null;
 
   ngOnInit(): void {
+
+    this.weatherService.selectedWeather$.subscribe(s=>{
+      this.weather =s ;
+    })
   }
 
 }
